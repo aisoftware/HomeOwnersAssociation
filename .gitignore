@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/HomeOwnersAssociation.Client/bin/Debug/netstandard2.0
+/HomeOwnersAssociation.Client/obj/Debug/netstandard2.0
+/HomeOwnersAssociation.Server/bin/Debug/netcoreapp2.1
+/HomeOwnersAssociation.Server/obj/Debug/netcoreapp2.1
+/HomeOwnersAssociation.Server/obj/Debug/netcoreapp2.0
+/HomeOwnersAssociation.Shared/bin/Debug/netstandard2.0
+/HomeOwnersAssociation.Shared/obj/Debug/netstandard2.0

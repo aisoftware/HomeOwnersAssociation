@@ -2,11 +2,9 @@
 @page "/fetchdata"
 @inject HttpClient Http
 
-<h1>Weather forecast</h1>
+<h1>Residences</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
-
-@if (forecasts == null)
+@if (residences == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -15,31 +13,33 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Lot</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var home in residences)
             {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
+            <tr>
+                <td>@home.Lot</td>
+                <td>@home.Address.Street</td>
+                <td>@home.Address.City</td>
+                <td>@home.Address.State</td>
+                <td>@home.Address.Zip</td>
+            </tr>
             }
         </tbody>
     </table>
 }
 
 @functions {
-    WeatherForecast[] forecasts;
+    Residence[] residences;
 
     protected override async Task OnInitAsync()
     {
-        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("api/SampleData/WeatherForecasts");
+        residences = await Http.GetJsonAsync<Residence[]>("api/Residence/List");
     }
 }
