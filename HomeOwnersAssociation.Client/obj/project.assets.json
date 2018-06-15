@@ -83,7 +83,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "NETStandard.Library/2.0.1": {
+      "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -435,7 +435,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "u71irPfHYabDJzBgmMPzZL9zWWiRfFAlpLbElWChhzx1cFXpB4pLLgD7QQRI4cgSGCw3MztdjWV5OrXqnmNPWw==",
+      "sha512": "UwC9b9woXjUwa3xJYd2Gz23SFiEc4Yd5Yu6kJHUWnOcvdz/Pk8Z2cCJQJSRU+3AGKC2iMB9rQnDBpLZgvSB1ag==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -447,14 +447,13 @@
         "runtime.json"
       ]
     },
-    "NETStandard.Library/2.0.1": {
-      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
+    "NETStandard.Library/2.0.3": {
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
-      "path": "netstandard.library/2.0.1",
+      "path": "netstandard.library/2.0.3",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -571,7 +570,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.1.nupkg.sha512",
+        "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -586,28 +585,31 @@
       "HomeOwnersAssociation.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Blazor.Browser >= 0.4.0",
       "Microsoft.AspNetCore.Blazor.Build >= 0.4.0",
-      "NETStandard.Library >= 2.0.1"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\donov\\.nuget\\packages\\": {},
+    "C:\\Users\\dwoodside\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\HomeOwnersAssociation.Client.csproj",
+      "projectUniqueName": "C:\\Code\\GitHub\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\HomeOwnersAssociation.Client.csproj",
       "projectName": "HomeOwnersAssociation.Client",
-      "projectPath": "C:\\Code\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\HomeOwnersAssociation.Client.csproj",
-      "packagesPath": "C:\\Users\\donov\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\obj\\",
+      "projectPath": "C:\\Code\\GitHub\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\HomeOwnersAssociation.Client.csproj",
+      "packagesPath": "C:\\Users\\dwoodside\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\GitHub\\HomeOwnersAssociation\\HomeOwnersAssociation.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\donov\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dwoodside\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -619,8 +621,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Code\\HomeOwnersAssociation\\HomeOwnersAssociation.Shared\\HomeOwnersAssociation.Shared.csproj": {
-              "projectPath": "C:\\Code\\HomeOwnersAssociation\\HomeOwnersAssociation.Shared\\HomeOwnersAssociation.Shared.csproj"
+            "C:\\Code\\GitHub\\HomeOwnersAssociation\\HomeOwnersAssociation.Shared\\HomeOwnersAssociation.Shared.csproj": {
+              "projectPath": "C:\\Code\\GitHub\\HomeOwnersAssociation\\HomeOwnersAssociation.Shared\\HomeOwnersAssociation.Shared.csproj"
             }
           }
         }
@@ -645,7 +647,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.1, )",
+            "version": "[2.0.3, )",
             "autoReferenced": true
           }
         },
