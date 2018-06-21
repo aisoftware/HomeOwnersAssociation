@@ -1,5 +1,6 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Meeting
 {
+    using HomeOwnersAssociation.Shared.Members;
     using System;
     using System.Collections.Generic;
 
@@ -31,5 +32,14 @@
         /// The candidates.
         /// </value>
         public List<Member> Candidates { get; set; } = new List<Member>();
+
+        /// <summary>
+        /// Gets or sets the votes.
+        /// </summary>
+        /// <value>
+        /// The votes.
+        /// </value>
+        public List<BallotVote> Votes { get; set; } = new List<BallotVote>();
+
     }
 }

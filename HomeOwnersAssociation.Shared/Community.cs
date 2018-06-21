@@ -1,10 +1,13 @@
 ﻿namespace HomeOwnersAssociation.Shared
 {
+    using HomeOwnersAssociation.Shared.Meeting;
+    using HomeOwnersAssociation.Shared.Members;
     using System;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Defines the <see cref="Community" /></summary>
+    /// Defines the <see cref="Community" />
+    /// </summary>
     public class Community
     {
         /// <summary>
@@ -62,5 +65,22 @@
         /// The committees.
         /// </value>
         public List<Committee> Committees { get; set; } = new List<Committee>();
+
+        /// <summary>
+        /// Gets or sets the articles.
+        /// </summary>
+        /// <value>
+        /// The articles.
+        /// </value>
+        public List<Legal.Article> ArticlesOfIncorporation { get; set; } = new List<Legal.Article>();
+
+        /// <summary>
+        /// Gets or sets the news.
+        /// </summary>
+        /// <value>
+        /// The news.
+        /// </value>
+        public List<News.Article> News { get; set; } = new List<News.Article>();
+
     }
 }

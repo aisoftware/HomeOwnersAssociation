@@ -1,11 +1,12 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Financial
 {
+    using HomeOwnersAssociation.Shared.Legal;
     using System;
 
     /// <summary>
-    /// Defines the <see cref="Restriction" />
+    /// Defines the <see cref="Violation" />
     /// </summary>
-    public class Restriction
+    public class Violation
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -16,12 +17,20 @@
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the description.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The description.
         /// </value>
-        public string Name { get; set; }
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amount.
+        /// </summary>
+        /// <value>
+        /// The amount.
+        /// </value>
+        public decimal Amount { get; set; }
 
         /// <summary>
         /// Gets or sets the article.
@@ -29,14 +38,6 @@
         /// <value>
         /// The article.
         /// </value>
-        public string Article { get; set; }
-
-        /// <summary>
-        /// Gets or sets the body.
-        /// </summary>
-        /// <value>
-        /// The body.
-        /// </value>
-        public string Body { get; set; }
+        public Article Article { get; set; }
     }
 }

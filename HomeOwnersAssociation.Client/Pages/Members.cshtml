@@ -1,0 +1,51 @@
+﻿@page "/members"
+@inherits MembersModel
+
+<h1>Members</h1>
+
+@if (MemberState.Members == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First</th>
+                <th>Last</th>
+                <th>Email</th>
+                <th>Privacy?</th>
+                <th>PhoneNumbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in MemberState.Members.OrderBy(x=>x.LastName).ThenBy(x=>x.FirstName))
+            {
+                <tr>
+                    <td>@member.FirstName</td>
+                    <td>@member.LastName</td>
+                    <td>@member.EmailAddress</td>
+                    <td>@member.PrivacyEnabled</td>
+                    <td>
+                        <ul>
+                            @foreach (var phone in member.PhoneNumbers)
+                            {
+
+                                <li>
+                                    @($"({phone.AreaCode}) {phone.Number.ToString().Substring(0, 3)}-{phone.Number.ToString().Substring(3)}")
+                                    <ul>
+                                        @foreach (var tag in phone.Tags)
+                                        {
+                                            <li>@tag.Name</li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,12 +1,13 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Legal
 {
+    using HomeOwnersAssociation.Shared.Meeting;
     using System;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Defines the <see cref="News" />
+    /// Defines the <see cref="Shared.Article" />
     /// </summary>
-    public class News
+    public class Article
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -17,20 +18,20 @@
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the title.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The title.
+        /// The name.
         /// </value>
-        public string Title { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the published.
+        /// Gets or sets the section.
         /// </summary>
         /// <value>
-        /// The published.
+        /// The section.
         /// </value>
-        public DateTimeOffset Published { get; set; } = DateTime.Now.Date.AddDays(1);
+        public string Section { get; set; }
 
         /// <summary>
         /// Gets or sets the body.
@@ -41,19 +42,19 @@
         public string Body { get; set; }
 
         /// <summary>
-        /// Gets or sets the author.
+        /// Gets or sets the approved on.
         /// </summary>
         /// <value>
-        /// The author.
+        /// The approved on.
         /// </value>
-        public string Author { get; set; }
+        public DateTimeOffset? ApprovedOn { get; set; }
 
         /// <summary>
-        /// Gets or sets the tags.
+        /// Gets or sets the votes.
         /// </summary>
         /// <value>
-        /// The tags.
+        /// The votes.
         /// </value>
-        public List<Tag<News>> Tags { get; set; } = new List<Tag<News>>();
+        public List<AmendmentVote> Votes { get; set; } = new List<AmendmentVote>();
     }
 }

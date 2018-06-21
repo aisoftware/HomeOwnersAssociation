@@ -1,4 +1,4 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Financial
 {
     using System;
 

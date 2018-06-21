@@ -1,5 +1,6 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Members
 {
+    using HomeOwnersAssociation.Shared.Financial;
     using System;
     using System.Collections.Generic;
 

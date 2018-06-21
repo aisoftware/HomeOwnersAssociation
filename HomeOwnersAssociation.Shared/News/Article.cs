@@ -1,12 +1,12 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.News
 {
     using System;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Defines the <see cref="Minutes" />
+    /// Defines the <see cref="Article" />
     /// </summary>
-    public class Minutes
+    public class Article
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -17,14 +17,6 @@
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the meeting date.
-        /// </summary>
-        /// <value>
-        /// The meeting date.
-        /// </value>
-        public DateTimeOffset MeetingDate { get; set; }
-
-        /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>
@@ -33,27 +25,35 @@
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the notes.
+        /// Gets or sets the published.
         /// </summary>
         /// <value>
-        /// The notes.
+        /// The published.
         /// </value>
-        public List<Note> Notes { get; set; } = new List<Note>();
+        public DateTimeOffset Published { get; set; } = DateTime.Now.Date.AddDays(1);
 
         /// <summary>
-        /// Gets or sets the attendees.
+        /// Gets or sets the body.
         /// </summary>
         /// <value>
-        /// The attendees.
+        /// The body.
         /// </value>
-        public List<Member> Attendees { get; set; }
+        public string Body { get; set; }
 
         /// <summary>
-        /// Gets or sets the note taker.
+        /// Gets or sets the author.
         /// </summary>
         /// <value>
-        /// The note taker.
+        /// The author.
         /// </value>
-        public Member NoteTaker { get; set; }
+        public string Author { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tags.
+        /// </summary>
+        /// <value>
+        /// The tags.
+        /// </value>
+        public List<Tag<Article>> Tags { get; set; } = new List<Tag<Article>>();
     }
 }

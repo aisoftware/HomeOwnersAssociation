@@ -1,4 +1,5 @@
 ﻿using HomeOwnersAssociation.Shared;
+using HomeOwnersAssociation.Shared.Members;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace HomeOwnersAssociation.Server.Controllers
     public class ResidenceController : Controller
     {
         private static string[] Streets = new[]
-       {
+        {
             "My Street", "That Other Street", "Your Drive"
         };
 

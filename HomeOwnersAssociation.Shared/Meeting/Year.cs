@@ -1,5 +1,6 @@
-﻿namespace HomeOwnersAssociation.Shared
+﻿namespace HomeOwnersAssociation.Shared.Meeting
 {
+    using HomeOwnersAssociation.Shared.Members;
     using System;
     using System.Collections.Generic;
 
@@ -15,6 +16,14 @@
         /// The identifier.
         /// </value>
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the start of year.
+        /// </summary>
+        /// <value>
+        /// The start of year.
+        /// </value>
+        public DateTimeOffset StartOfYear { get; set; }
 
         /// <summary>
         /// Gets or sets the ballot.

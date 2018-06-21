@@ -1,5 +1,6 @@
 ﻿namespace HomeOwnersAssociation.Shared
 {
+    using HomeOwnersAssociation.Shared.Members;
     using System;
     using System.Collections.Generic;
 
@@ -30,6 +31,6 @@
         /// <value>
         /// The members.
         /// </value>
-        public List<Member> Members { get; set; }
+        public List<Member> Members { get; set; } = new List<Member>();
     }
 }

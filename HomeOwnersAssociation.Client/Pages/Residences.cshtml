@@ -1,10 +1,9 @@
-﻿@using HomeOwnersAssociation.Shared
-@page "/residences"
-@inject HttpClient Http
+﻿@page "/residences"
+@inherits ResidencesModel
 
 <h1>Residences</h1>
 
-@if (residences == null)
+@if (ResidenceState.Residences == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -21,7 +20,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var home in residences)
+            @foreach (var home in ResidenceState.Residences)
             {
                 <tr>
                     <td>@home.Lot</td>
@@ -35,11 +34,3 @@ else
     </table>
 }
 
-@functions {
-Residence[] residences;
-
-protected override async Task OnInitAsync()
-{
-    residences = await Http.GetJsonAsync<Residence[]>("api/Residence/List");
-}
-}
