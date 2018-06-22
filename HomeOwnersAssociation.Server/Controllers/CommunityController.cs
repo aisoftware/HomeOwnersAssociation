@@ -10,8 +10,6 @@ namespace HomeOwnersAssociation.Server.Controllers
     [Route("api/[controller]")]
     public class CommunityController : Controller
     {
-      
-
         [HttpGet("[action]")]
         public Community Details()
         {

@@ -16,7 +16,7 @@ else
                 <th>Last</th>
                 <th>Email</th>
                 <th>Privacy?</th>
-                <th>PhoneNumbers</th>
+                <th>Phone Numbers</th>
             </tr>
         </thead>
         <tbody>
@@ -28,18 +28,16 @@ else
                     <td>@member.EmailAddress</td>
                     <td>@member.PrivacyEnabled</td>
                     <td>
-                        <ul>
+                        <ul class="list-group">
                             @foreach (var phone in member.PhoneNumbers)
                             {
 
-                                <li>
+                                <li class="list-group-item">
                                     @($"({phone.AreaCode}) {phone.Number.ToString().Substring(0, 3)}-{phone.Number.ToString().Substring(3)}")
-                                    <ul>
-                                        @foreach (var tag in phone.Tags)
-                                        {
-                                            <li>@tag.Name</li>
-                                        }
-                                    </ul>
+                                    @foreach (var tag in phone.Tags)
+                                    {
+                                        <span class="badge @(tag.Name == "Home" ? "badge-primary" : "badge-secondary")">@tag.Name</span>
+                                    }
                                 </li>
                             }
                         </ul>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HomeOwnersAssociation.Shared;
 using HomeOwnersAssociation.Shared.Members;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,35 +27,48 @@ namespace HomeOwnersAssociation.Server.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Member> List()
         {
-            var rng = new Random();
-            var results = new List<Member>();
+            return JsonConvert.DeserializeObject<List<Member>>(System.IO.File.ReadAllText(@"./App_Data/members.json"));
 
-            for (var index = 1; index <= 50; index++)
-            {
-                var First = FirstNames[rng.Next(FirstNames.Length)];
-                var Last = LastNames[rng.Next(LastNames.Length)];
-
-                results.Add(new Member
-                {
-                    Id = Guid.NewGuid(),
-                    FirstName = First,
-                    LastName = Last,
-                    EmailAddress = $"{First}.{Last}@noplace",
-                    PrivacyEnabled = index % 13 == 0,
-                    PhoneNumbers = new List<PhoneNumber> {
-                    new PhoneNumber {
-                        Id = Guid.NewGuid(),
-                        AreaCode = 123,
-                        Number = 5550000 + index,
-                        AllowTexting = index % 5 != 0,
-                        Tags = new List<Tag<PhoneNumber>>() {
-                            new Tag<PhoneNumber> { Id = Guid.NewGuid(), Name = index % 5 != 0 ? "Mobile" : "Home"}
-                        }
-                    }
-                }
-                });
-            }
-            return results;
+            //var rng = new Random();
+            //var results = new List<Member>();
+            //for (var index = 1; index <= 120; index++)
+            //{
+            //    var First = FirstNames[rng.Next(FirstNames.Length)];
+            //    var Last = LastNames[rng.Next(LastNames.Length)];
+            //    results.Add(new Member
+            //    {
+            //        Id = Guid.NewGuid(),
+            //        FirstName = First,
+            //        LastName = Last,
+            //        EmailAddress = $"{First}.{Last}@noplace",
+            //        PrivacyEnabled = index % 13 == 0,
+            //        PhoneNumbers = new List<PhoneNumber> {
+            //        new PhoneNumber {
+            //            Id = Guid.NewGuid(),
+            //            AreaCode = 123,
+            //            Number = 5550000 + index,
+            //            AllowTexting = index % 5 != 0,
+            //            Tags = new List<Tag<PhoneNumber>>() {
+            //                new Tag<PhoneNumber> { Id = Guid.NewGuid(), Name = index % 5 != 0 ? "Mobile" : "Home"}
+            //            }
+            //        }
+            //    }
+            //    });
+            //    if(index % 7 == 0)
+            //    {
+            //        results.Last().PhoneNumbers.Add(new PhoneNumber
+            //        {
+            //            Id = Guid.NewGuid(),
+            //            AreaCode = 123,
+            //            Number = 5551000 + index*7,
+            //            AllowTexting = index*7 % 5 != 0,
+            //            Tags = new List<Tag<PhoneNumber>>() {
+            //                new Tag<PhoneNumber> { Id = Guid.NewGuid(), Name = index*7 % 5 != 0 ? "Mobile" : "Home"}
+            //            }
+            //        });
+            //    }
+            //}
+            //return results;
         }
 
     }

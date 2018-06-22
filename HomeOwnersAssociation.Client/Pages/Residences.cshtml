@@ -17,6 +17,7 @@ else
                 <th>City</th>
                 <th>State</th>
                 <th>Zip</th>
+                <th>Member</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,20 @@ else
                     <td>@home.Address.City</td>
                     <td>@home.Address.State</td>
                     <td>@home.Address.Zip</td>
+                    <td>
+                        <ul class="list-group">
+                            @foreach (var owner in home.OwnershipHistory.Where(h => !h.SoldDate.HasValue))
+                            {
+
+                                @foreach (var member in owner.Members)
+                                {
+                                    <li class="list-group-item">
+                                        @member.LastName, @member.FirstName since @owner.PurchaseDate.ToLocalTime().ToString("yyyy-MM-dd")
+                                    </li>
+                                }
+                            }
+                            </ul>
+                    </td>
                 </tr>
             }
         </tbody>
